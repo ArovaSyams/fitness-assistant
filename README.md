@@ -65,3 +65,29 @@ Once installed, you can install the app dependencies:
 ```bash
 pipenv install --dev
 ```
+
+## Evaluation
+
+
+## Retrieval
+the basic approach - using minsearch without any boosting - give the following metrics:  
+
+hit_rate: 94.9%, 
+MMR: 84%
+
+The improved version (with better boosting)
+hit_rate: 95%
+MMR: 92.6%
+
+The best boosting parameters
+```python
+boost = {
+    'exercise_name': 2.8664358956968776,
+    'type_of_activity': 0.6639354730372857,
+    'type_of_equipment': 0.5039263007577525,
+    'body_part': 1.8790068047197304,
+    'type': 0.40466074582783396,
+    'muscle_groups_activated': 2.133852149769934,
+    'instructions': 0.55384884006528
+}
+```
