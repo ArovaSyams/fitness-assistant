@@ -91,3 +91,26 @@ boost = {
     'instructions': 0.55384884006528
 }
 ```
+
+## Running the Flask application
+
+```python
+pipenv run app.py
+```
+
+### Running the application
+
+```bash
+URL=http://localhost:5000
+
+QUESTION="Is the lat pulldown considered a stregth training activity, and if so, why?"
+
+DATA='{
+    "question": "'${QUESTION}'"
+}'
+
+curl -X POST \
+  -H "Content-Type: application/json" \
+  -d "${DATA}" \
+  ${URL}/question
+```
