@@ -114,3 +114,19 @@ curl -X POST \
   -d "${DATA}" \
   ${URL}/question
 ```
+
+Sending Feedback
+
+```bash
+ID="4e1cef04-bfd9-4a2c-9cdd-2771d8f70e4d"
+URL=http://localhost:5000
+FEEDBACK_DATA='{
+    "conversation_id": "'${ID}'",
+    "feedback": 1
+}'
+
+curl -X POST \
+    -H "Content-Type: application/json" \
+    -d "${FEEDBACK_DATA}" \
+    ${URL}/feedback
+```
